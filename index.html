@@ -813,15 +813,15 @@ p.footer-text a{color:#d7d8d8}
 </li>
 <li><a href="#_post_deployment_steps">Post-deployment steps</a>
 <ul class="sectlevel2">
-<li><a href="#_optional_create_database_copies">(Optional) Create Database Copies</a></li>
-<li><a href="#_optional_create_a_dns_entry_for_the_load_balancer">(Optional) Create a DNS Entry for the Load Balancer</a></li>
+<li><a href="#_optional_create_database_copies">(Optional) Create database copies</a></li>
+<li><a href="#_optional_create_a_dns_entry_for_the_load_balancer">(Optional) Create a DNS entry for the load balancer</a></li>
 </ul>
 </li>
 <li><a href="#_best_practices_for_using_exchange_on_aws">Best practices for using Exchange on AWS</a>
 <ul class="sectlevel2">
-<li><a href="#high-availability-and-disaster-recovery">High Availability and Disaster Recovery</a></li>
-<li><a href="#automatic-failover">Automatic Failover</a></li>
-<li><a href="#security-groups-and-firewalls">Security Groups and Firewalls</a></li>
+<li><a href="#high-availability-and-disaster-recovery">High availability and disaster recovery</a></li>
+<li><a href="#automatic-failover">Automatic failover</a></li>
+<li><a href="#security-groups-and-firewalls">Security groups and firewalls</a></li>
 </ul>
 </li>
 <li><a href="#_security">Security</a></li>
@@ -979,7 +979,7 @@ After you deploy the Quick Start, <a href="https://docs.aws.amazon.com/awsaccoun
 <p>By default, the Exchange Server Quick Start uses two Availability Zones, with one Exchange node in each zone. The file share witness is launched in the same Availability Zone as the first Exchange node.</p>
 </div>
 <div class="paragraph">
-<p><strong>Note</strong> Where possible, we recommend deploying the Exchange Server Quick Start using three Availability Zones. This enables automatic failover of database availability groups (DAGs), without the need for manual intervention.</p>
+<p><strong>Note</strong>: Where possible, we recommend deploying the Exchange Server Quick Start using three Availability Zones. This enables automatic failover of database availability groups (DAGs), without the need for manual intervention.</p>
 </div>
 <div class="paragraph">
 <p>You can deploy a full Exchange node instead of a file share witness. In addition, you can specify whether to deploy the full node or the file share witness in a third Availability Zone.</p>
@@ -998,7 +998,7 @@ After you deploy the Quick Start, <a href="https://docs.aws.amazon.com/awsaccoun
 </div>
 <div id="architecture1" class="imageblock">
 <div class="content">
-<img src="images/image1.png" alt="Architecture" width="648" height="418">
+<img src="images/image1.png" alt="Architecture" width="100%" height="100%">
 </div>
 <div class="title">Figure 1. Quick Start architecture for Exchange on AWS</div>
 </div>
@@ -1007,7 +1007,7 @@ After you deploy the Quick Start, <a href="https://docs.aws.amazon.com/awsaccoun
 </div>
 <div id="architecture2" class="imageblock">
 <div class="content">
-<img src="images/image2.png" alt="Architecture" width="648" height="329">
+<img src="images/image2.png" alt="Architecture" width="100%" height="100%">
 </div>
 <div class="title">Figure 2. Quick Start architecture for Exchange across three Availability Zones on AWS</div>
 </div>
@@ -1117,7 +1117,7 @@ After you deploy the Quick Start, <a href="https://docs.aws.amazon.com/awsaccoun
 </div>
 </div>
 <div class="sect3">
-<h4 id="ip-addresses-on-the-exchange-nodes">IP Addresses on the Exchange Nodes</h4>
+<h4 id="ip-addresses-on-the-exchange-nodes">IP Addresses on the Exchange nodes</h4>
 <div class="paragraph">
 <p>By default, the Microsoft Exchange Quick Start template deploys two Exchange nodes with two IP addresses each:</p>
 </div>
@@ -1164,7 +1164,7 @@ Add-DatabaseAvailabilityGroupServer -Identity DAG
 </div>
 </div>
 <div class="paragraph">
-<p><strong>Note</strong> By default, the database availability group is created with the name DAG. To change this value, modify the DAGName default parameter value in the Configure-ExchangeDAG.ps1 file.</p>
+<p><strong>Note</strong>: By default, the database availability group is created with the name DAG. To change this value, modify the DAGName default parameter value in the Configure-ExchangeDAG.ps1 file.</p>
 </div>
 <div class="paragraph">
 <p>The first command runs on each instance during the bootstrapping process. It installs the required components and management tools for the failover clustering services. The rest of the commands run near the end of the bootstrapping process on the second node and are responsible for creating the cluster and for defining the server nodes and IP addresses.</p>
@@ -1207,7 +1207,7 @@ Add-DatabaseAvailabilityGroupServer -Identity DAG
 </div>
 </div>
 <div class="sect3">
-<h4 id="load-balancer">Load Balancer</h4>
+<h4 id="load-balancer">Load balancer</h4>
 <div class="paragraph">
 <p>Exchange servers running with the Client Access/Transport roles are usually situated behind a network load balancer (NLB) with a unified Exchange namespace such as “mail.example.com.” The namespace resolves to the load balancer, which in turns distributes traffic to the Exchange servers.</p>
 </div>
@@ -1436,7 +1436,7 @@ Certain Regions are available on an opt-in basis. See <a href="https://docs.aws.
 <p>https://[yourbucket].s3-us-east-1.amazonaws.com/SW_DVD9_Exchange_Svr_2019.zip</p>
 </div>
 <div class="paragraph">
-<p><strong>Note</strong> We recommend uploading the Exchange 2019 installation media to an S3 bucket and temporarily making the installation media public. This will ensure that the file is quickly downloaded to the EC2 instances.</p>
+<p><strong>Note</strong>: Upload the Exchange 2019 installation media to an S3 bucket and temporarily make the installation media public. This will ensure that the file is quickly downloaded to the EC2 instances.</p>
 </div>
 </div>
 <div class="sect3">
@@ -1578,7 +1578,7 @@ You are responsible for the cost of the AWS services used while running this Qui
 <h2 id="_post_deployment_steps">Post-deployment steps</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_optional_create_database_copies">(Optional) Create Database Copies</h3>
+<h3 id="_optional_create_database_copies">(Optional) Create database copies</h3>
 <div class="paragraph">
 <p>The Quick Start creates a database availability group (DAG) and adds the Exchange nodes to the DAG. As part of the Exchange installation, each Exchange node contains a mailbox database. The first node contains a database called DB1, and the second node contains a database called DB2.</p>
 </div>
@@ -1597,7 +1597,7 @@ Add-MailboxDatabaseCopy -Identity DB2 –MailboxServer ExchangeNode1 -Activation
 </div>
 </div>
 <div class="sect2">
-<h3 id="_optional_create_a_dns_entry_for_the_load_balancer">(Optional) Create a DNS Entry for the Load Balancer</h3>
+<h3 id="_optional_create_a_dns_entry_for_the_load_balancer">(Optional) Create a DNS entry for the load balancer</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1689,7 +1689,7 @@ Add-MailboxDatabaseCopy -Identity DB2 –MailboxServer ExchangeNode1 -Activation
 <p>The architecture built by this Quick Start supports AWS best practices for high availability and security.</p>
 </div>
 <div class="sect2">
-<h3 id="high-availability-and-disaster-recovery">High Availability and Disaster Recovery</h3>
+<h3 id="high-availability-and-disaster-recovery">High availability and disaster recovery</h3>
 <div class="paragraph">
 <p>Amazon EC2 provides the ability to place instances in multiple locations composed of AWS Regions and Availability Zones. Regions are dispersed and located in separate geographic areas. Availability Zones are distinct locations within a Region that are engineered to be isolated from failures in other Availability Zones and that provide inexpensive, low-latency network connectivity to other Availability Zones in the same Region.</p>
 </div>
@@ -1698,7 +1698,7 @@ Add-MailboxDatabaseCopy -Identity DB2 –MailboxServer ExchangeNode1 -Activation
 </div>
 </div>
 <div class="sect2">
-<h3 id="automatic-failover">Automatic Failover</h3>
+<h3 id="automatic-failover">Automatic failover</h3>
 <div class="paragraph">
 <p>Deploying the Quick Start with the <strong>default parameters</strong> configures a two-node database availability group (DAG) with a file share witness. The DAG uses Windows Server Failover Clustering for automatic failover.</p>
 </div>
@@ -1729,7 +1729,7 @@ Add-MailboxDatabaseCopy -Identity DB2 –MailboxServer ExchangeNode1 -Activation
 </div>
 </div>
 <div class="sect2">
-<h3 id="security-groups-and-firewalls">Security Groups and Firewalls</h3>
+<h3 id="security-groups-and-firewalls">Security groups and firewalls</h3>
 <div class="paragraph">
 <p>When the EC2 instances are launched, they must be associated with a security group, which acts as a stateful firewall. You have complete control over the network traffic entering or leaving the security group, and you can build granular rules that are scoped by protocol, port number, and source or destination IP address or subnet. By default, all traffic egressing a security group is permitted. Ingress traffic, on the other hand, must be configured to allow the appropriate traffic to reach your instances.</p>
 </div>
