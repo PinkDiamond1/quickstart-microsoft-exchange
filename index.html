@@ -813,6 +813,7 @@ p.footer-text a{color:#d7d8d8}
 </li>
 <li><a href="#_post_deployment_steps">Post-deployment steps</a>
 <ul class="sectlevel2">
+<li><a href="#_apply_security_update_for_microsoft_exchange_server_2019_and_2016_march_2_2021_kb5000871">Apply security update for Microsoft Exchange Server 2019, and 2016: March 2, 2021 (KB5000871)</a></li>
 <li><a href="#_optional_create_database_copies">(Optional) Create database copies</a></li>
 <li><a href="#_optional_create_a_dns_entry_for_the_load_balancer">(Optional) Create a DNS entry for the load balancer</a></li>
 </ul>
@@ -1577,6 +1578,32 @@ You are responsible for the cost of the AWS services used while running this Qui
 <div class="sect1">
 <h2 id="_post_deployment_steps">Post-deployment steps</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="_apply_security_update_for_microsoft_exchange_server_2019_and_2016_march_2_2021_kb5000871">Apply security update for Microsoft Exchange Server 2019, and 2016: March 2, 2021 (KB5000871)</h3>
+<div class="paragraph">
+<p>On March 2, 2021, Microsoft identified <a href="https://www.microsoft.com/security/blog/2021/03/02/hafnium-targeting-exchange-servers/">several 0-day exploits targeting on-premises Exchange servers</a>. The patches for these 0-day exploits are available from Microsoft Windows Update or to download from <a href="https://support.microsoft.com/en-us/topic/description-of-the-security-update-for-microsoft-exchange-server-2019-2016-and-2013-march-2-2021-kb5000871-9800a6bb-0a21-4ee7-b9da-fa85b3e1d23b">the Microsoft support website</a>, but are not included in the latest Exchange Cumulative Update packages. Once your Exchange environment has been deployed you will need to install these patches manually.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Launch Microsoft Windows Update on each deployed Exchange server and download and install all available updates; or</p>
+</li>
+<li>
+<p>Download the patches and manually deploy them</p>
+<div class="ulist">
+<ul>
+<li>
+<p>For Exchange 2019 CU8, download from <a href="https://www.microsoft.com/download/details.aspx?familyid=18c75641-e53d-4979-8d5e-29a80674e41f">here</a>.</p>
+</li>
+<li>
+<p>For Exchange 2016 CU19, download from <a href="https://www.microsoft.com/download/details.aspx?familyid=31211a48-0cef-462e-bb11-c36440f80bb3">here</a>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
 <div class="sect2">
 <h3 id="_optional_create_database_copies">(Optional) Create database copies</h3>
 <div class="paragraph">
