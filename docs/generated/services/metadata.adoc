@@ -20,6 +20,7 @@
 :template_aws_secretsmanager_secret:
 :template_backup:
 :template_cloudformation:
+:template_deterministic_ec2_instances:
 :template_ec2:
 :template_elasticloadbalancingv2:
 :template_iam:

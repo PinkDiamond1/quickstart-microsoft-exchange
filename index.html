@@ -791,7 +791,7 @@ p.footer-text a{color:#d7d8d8}
 <ul class="sectlevel1">
 <li><a href="#_overview">Overview</a></li>
 <li><a href="#_microsoft_exchange_on_aws">Microsoft Exchange on AWS</a></li>
-<li><a href="#_cost">Cost</a></li>
+<li><a href="#_aws_costs">AWS costs</a></li>
 <li><a href="#_software_licenses">Software licenses</a></li>
 <li><a href="#_architecture">Architecture</a>
 <ul class="sectlevel2">
@@ -813,7 +813,7 @@ p.footer-text a{color:#d7d8d8}
 </li>
 <li><a href="#_post_deployment_steps">Post-deployment steps</a>
 <ul class="sectlevel2">
-<li><a href="#_apply_security_update_for_microsoft_exchange_server_2019_and_2016_march_2_2021_kb5000871">Apply security update for Microsoft Exchange Server 2019, and 2016: March 2, 2021 (KB5000871)</a></li>
+<li><a href="#_run_windows_updates">Run Windows Updates</a></li>
 <li><a href="#_optional_create_database_copies">(Optional) Create database copies</a></li>
 <li><a href="#_optional_create_a_dns_entry_for_the_load_balancer">(Optional) Create a DNS entry for the load balancer</a></li>
 </ul>
@@ -929,11 +929,10 @@ report bugs, or submit feature ideas for this Quick Start.
 </div>
 </div>
 <div class="sect1">
-<h2 id="_cost">Cost</h2>
+<h2 id="_aws_costs">AWS costs</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You are responsible for the cost of the AWS services used while running
-this Quick Start. There is no additional cost for
+<p>You are responsible for the cost of the AWS services and any third-party licenses used while running this Quick Start. There is no additional cost for
 using the Quick Start.</p>
 </div>
 <div class="paragraph">
@@ -1262,7 +1261,10 @@ Add-DatabaseAvailabilityGroupServer -Identity DAG
 <div class="sect2">
 <h3 id="_specialized_knowledge">Specialized knowledge</h3>
 <div class="paragraph">
-<p>This deployment requires a moderate level of familiarity with AWS services. If you’re new to AWS, visit <a href="https://aws.amazon.com/getting-started/" target="_blank" rel="noopener">Getting Started with AWS</a> and <a href="https://aws.amazon.com/training/" target="_blank" rel="noopener">Training and Certification</a>. These sites provide materials for learning how to design, deploy, and operate your infrastructure and applications on the AWS Cloud.</p>
+<p>This deployment requires a moderate level of familiarity with
+AWS services. If you’re new to AWS, see <a href="https://aws.amazon.com/getting-started/" target="_blank" rel="noopener">Getting Started Resource Center</a>
+and <a href="https://aws.amazon.com/training/" target="_blank" rel="noopener">AWS Training and Certification</a>. These sites provide materials for learning how to design,
+deploy, and operate your infrastructure and applications on the AWS Cloud.</p>
 </div>
 <div class="paragraph">
 <p>Before you deploy this Quick Start, we recommend that you become familiar with the following AWS services. (If you are new to AWS, see <a href="https://aws.amazon.com/getting-started/">Getting Started with AWS</a>.)</p>
@@ -1330,12 +1332,12 @@ Add-DatabaseAvailabilityGroupServer -Identity DAG
 <div class="sect2">
 <h3 id="_technical_requirements">Technical requirements</h3>
 <div class="paragraph">
-<p>Before you launch the Quick Start, your account must be configured as specified in the following table. Otherwise, deployment might fail.</p>
+<p>Before you launch the Quick Start, review the following information and ensure that your account is properly configured. Otherwise, deployment might fail.</p>
 </div>
 <div class="sect3">
 <h4 id="_resource_quotas">Resource quotas</h4>
 <div class="paragraph">
-<p>If necessary, request <a href="https://console.aws.amazon.com/servicequotas/home?region=us-east-2#!/" target="_blank" rel="noopener">service quota increases</a> for the following resources. You might need to request increases if your existing deployment currently uses these resources and if this Quick Start deployment could result in exceeding the default quotas. The <a href="https://console.aws.amazon.com/servicequotas/home?region=us-east-2#!/" target="_blank" rel="noopener">Service Quotas console</a> displays your usage and quotas for some aspects of some services. For more information, see <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/intro.html" target="_blank" rel="noopener">What is Service Quotas?</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html" target="_blank" rel="noopener">AWS service quotas</a>.</p>
+<p>If necessary, request <a href="https://console.aws.amazon.com/servicequotas/home?region=us-east-2#!/" target="_blank" rel="noopener">service quota increases</a> for the following resources. You might request quota increases to avoid exceeding the default limits for any resources that are shared across multiple deployments. The <a href="https://console.aws.amazon.com/servicequotas/home?region=us-east-2#!/" target="_blank" rel="noopener">Service Quotas console</a> displays your usage and quotas for some aspects of some services. For more information, see <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/intro.html" target="_blank" rel="noopener">What is Service Quotas?</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html" target="_blank" rel="noopener">AWS service quotas</a>.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -1392,7 +1394,7 @@ Add-DatabaseAvailabilityGroupServer -Identity DAG
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-Certain Regions are available on an opt-in basis. See <a href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html" target="_blank" rel="noopener">Managing AWS Regions</a>.
+Certain Regions are available on an opt-in basis. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html" target="_blank" rel="noopener">Managing AWS Regions</a>.
 </td>
 </tr>
 </table>
@@ -1545,10 +1547,6 @@ You are responsible for the cost of the AWS services used while running this Qui
 <li>
 <p>On the <strong>Specify stack details</strong> page, change the stack name if needed. Review the parameters for the template. Provide values for the parameters that require input. For all other parameters, review the default settings and customize them as necessary. For details on each parameter, see the <a href="#_parameter_reference">Parameter reference</a>Â section of this guide. When you finish reviewing and customizing the parameters, choose <strong>Next</strong>.</p>
 </li>
-</ol>
-</div>
-<div class="olist arabic">
-<ol class="arabic" start="5">
 <li>
 <p>On the <strong>Configure stack options</strong> page, you can <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html" target="_blank" rel="noopener">specify tags</a> (key-value pairs) for resources in your stack and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-add-tags.html" target="_blank" rel="noopener">set advanced options</a>. When you’re finished, choose <strong>Next</strong>.</p>
 </li>
@@ -1579,29 +1577,28 @@ You are responsible for the cost of the AWS services used while running this Qui
 <h2 id="_post_deployment_steps">Post-deployment steps</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_apply_security_update_for_microsoft_exchange_server_2019_and_2016_march_2_2021_kb5000871">Apply security update for Microsoft Exchange Server 2019, and 2016: March 2, 2021 (KB5000871)</h3>
+<h3 id="_run_windows_updates">Run Windows Updates</h3>
 <div class="paragraph">
-<p>On March 2, 2021, Microsoft identified <a href="https://www.microsoft.com/security/blog/2021/03/02/hafnium-targeting-exchange-servers/">several 0-day exploits targeting on-premises Exchange servers</a>. The patches for these 0-day exploits are available from Microsoft Windows Update or to download from <a href="https://support.microsoft.com/en-us/topic/description-of-the-security-update-for-microsoft-exchange-server-2019-2016-and-2013-march-2-2021-kb5000871-9800a6bb-0a21-4ee7-b9da-fa85b3e1d23b">the Microsoft support website</a>, but are not included in the latest Exchange Cumulative Update packages. Once your Exchange environment has been deployed you will need to install these patches manually.</p>
+<p>In order to ensure the deployed servers' operating systems and installed applications have the latest Microsoft updates, run Windows Update on each server.</p>
 </div>
-<div class="ulist">
-<ul>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
-<p>Launch Microsoft Windows Update on each deployed Exchange server and download and install all available updates; or</p>
+<p>Create an RDP session from the Remote Desktop Gateway server to each deployed server.</p>
 </li>
 <li>
-<p>Download the patches and manually deploy them</p>
-<div class="ulist">
-<ul>
-<li>
-<p>For Exchange 2019 CU8, download from <a href="https://www.microsoft.com/download/details.aspx?familyid=18c75641-e53d-4979-8d5e-29a80674e41f">here</a>.</p>
+<p>Open the <strong>Settings</strong> application.</p>
 </li>
 <li>
-<p>For Exchange 2016 CU19, download from <a href="https://www.microsoft.com/download/details.aspx?familyid=31211a48-0cef-462e-bb11-c36440f80bb3">here</a>.</p>
+<p>Open <strong>Update &amp; Security</strong>.</p>
 </li>
-</ul>
-</div>
+<li>
+<p>Click <strong>Check for updates</strong>.</p>
 </li>
-</ul>
+<li>
+<p>Install any updates and reboot if necessary.</p>
+</li>
+</ol>
 </div>
 </div>
 <div class="sect2">
@@ -2644,13 +2641,13 @@ Region</code>, and <code>Quick Start S3 key prefix</code>. Changing these parame
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Path to Exchange 2016 ISO
 (<code>Exchange2016Source</code>)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://download.microsoft.com/download/d/2/3/d23b113b-9634-4456-acba-1f7b0ce22b0e/ExchangeServer2016-x64-cu18.iso" class="bare">https://download.microsoft.com/download/d/2/3/d23b113b-9634-4456-acba-1f7b0ce22b0e/ExchangeServer2016-x64-cu18.iso</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://download.microsoft.com/download/0/b/7/0b702b8b-03ab-4553-9e2c-c73bb0c8535f/ExchangeServer2016-x64-CU20.ISO" class="bare">https://download.microsoft.com/download/0/b/7/0b702b8b-03ab-4553-9e2c-c73bb0c8535f/ExchangeServer2016-x64-CU20.ISO</a></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Full URL (including https://) for Exchange 2016 ISO.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Path to Exchange 2019 ISO
 (<code>Exchange2019Source</code>)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>https://</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://download.microsoft.com/download/d/7/b/d7bcf78a-00d2-4a46-a3d2-7d506116bcd2/ExchangeServer2019-x64-CU9.ISO" class="bare">https://download.microsoft.com/download/d/7/b/d7bcf78a-00d2-4a46-a3d2-7d506116bcd2/ExchangeServer2019-x64-CU9.ISO</a></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Full URL (including https://) for Exchange 2019 ISO.</p></td>
 </tr>
 <tr>
@@ -2857,7 +2854,7 @@ and to share your customizations with others.</p>
 <p>This document is provided for informational purposes only. It represents AWS’s current product offerings and practices as of the date of issue of this document, which are subject to change without notice. Customers are responsible for making their own independent assessment of the information in this document and any use of AWS’s products or services, each of which is provided “as is” without warranty of any kind, whether expressed or implied. This document does not create any warranties, representations, contractual commitments, conditions, or assurances from AWS, its affiliates, suppliers, or licensors. The responsibilities and liabilities of AWS to its customers are controlled by AWS agreements, and this document is not part of, nor does it modify, any agreement between AWS and its customers.</p>
 </div>
 <div class="paragraph">
-<p>The software included with this paper is licensed under the Apache License, version 2.0 (the "License"). You may not use this file except in compliance with the License. A copy of the License is located at <a href="http://aws.amazon.com/apache2.0/" class="bare">http://aws.amazon.com/apache2.0/</a> or in the accompanying "license" file. This code is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either expressed or implied. See the License for specific language governing permissions and limitations.</p>
+<p>The software included with this paper is licensed under the Apache License, version 2.0 (the "License"). You may not use this file except in compliance with the License. A copy of the License is located at <a href="http://aws.amazon.com/apache2.0/" target="_blank" rel="noopener">http://aws.amazon.com/apache2.0/</a> or in the accompanying "license" file. This code is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either expressed or implied. See the License for specific language governing permissions and limitations.</p>
 </div>
 </div>
 </div>
@@ -2865,7 +2862,18 @@ and to share your customizations with others.</p>
 <p class="footer-text">
 <!-- We can use document attributes: -->
 <!-- Generated with Asciidoctor v2.0.12. -->
-<a href="https://aws.amazon.com/privacy/">Privacy</a> | <a href="https://aws.amazon.com/terms/">Site terms</a> | &copy; 2020, Amazon Web Services, Inc. or its affiliates. All rights reserved.
+<a href="https://aws.amazon.com/privacy/">Privacy</a> | <a href="https://aws.amazon.com/terms/">Site terms</a> | &copy; 2021, Amazon Web Services, Inc. or its affiliates. All rights reserved.
 </p>
 </body>
 </html>
+<!--
+repo commit:
+d7ea9a6bf79ffb7700a8a2533068fe324ea458f6
+
+submodule config:
++59b9927c61cd1831141cf0350520c89abb2246da docs/boilerplate (heads/main)
+ 53fbedf058adaea101a587ec0fa9d84cb2a05587 submodules/quickstart-aws-vpc (v1.0-56-g53fbedf)
+ 5cf98f0edcd853f4b4d5ec184efff3c1d5895493 submodules/quickstart-microsoft-activedirectory (remotes/origin/master-132-g5cf98f0)
+ c2d56d5cbebf7a146ff51ee78730faf459409b67 submodules/quickstart-microsoft-rdgateway (remotes/origin/master-66-gc2d56d5)
+ e1f1a322eff1014be7fbaa8f8384e9dea2fa218c submodules/quickstart-microsoft-utilities (heads/main)
+-->
