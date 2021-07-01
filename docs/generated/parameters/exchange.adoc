@@ -54,7 +54,7 @@
 (`VolumeType`)|`gp2`|The volume type for the Exchange data drive.|Data Volume IOPS
 (`VolumeIops`)|`1000`|The Iops for the Exchange Data drive (Only used when volume type is io2).|Path to Exchange 2016 ISO
 (`Exchange2016Source`)|`https://download.microsoft.com/download/0/b/7/0b702b8b-03ab-4553-9e2c-c73bb0c8535f/ExchangeServer2016-x64-CU20.ISO`|Full URL (including https://) for Exchange 2016 ISO.|Path to Exchange 2019 ISO
-(`Exchange2019Source`)|`https://download.microsoft.com/download/d/7/b/d7bcf78a-00d2-4a46-a3d2-7d506116bcd2/ExchangeServer2019-x64-CU9.ISO`|Full URL (including https://) for Exchange 2019 ISO.|Enable AWS Backups
+(`Exchange2019Source`)|`https://download.microsoft.com/download/7/3/f/73f75f9e-e7fd-4cb0-a2fc-405cbb800f2d/ExchangeServer2019-x64-CU10.ISO`|Full URL (including https://) for Exchange 2019 ISO.|Enable AWS Backups
 (`EnableBackups`)|`yes`|Creates a default daily/weekly backup schedule using AWS Backup
 |===
 .Load Balancer Configuration
