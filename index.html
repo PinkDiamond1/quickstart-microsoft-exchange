@@ -1419,9 +1419,12 @@ deploy, and operate your infrastructure and applications on the AWS Cloud.</p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_supported_regions">Supported Regions</h4>
+<h4 id="_supported_aws_regions">Supported AWS Regions</h4>
 <div class="paragraph">
-<p>This Quick Start supports deployment in either two or three Availability Zones, however some AWS Regions support only two Availability Zones; for a current list, see <a href="https://aws.amazon.com/about-aws/global-infrastructure/">AWS Global Infrastructure</a>.</p>
+<p>For any Quick Start to work in a Region other than its default Region, all the services it deploys must be supported in that Region. You can launch a Quick Start in any Region and see if it works. If you get an error such as “Unrecognized resource type,” the Quick Start is not supported in that Region.</p>
+</div>
+<div class="paragraph">
+<p>For an up-to-date list of AWS Regions and the AWS services they support, see <a href="https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/" target="_blank" rel="noopener">AWS Regional Services</a>.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -1437,9 +1440,9 @@ Certain Regions are available on an opt-in basis. For more information, see <a h
 </div>
 </div>
 <div class="sect3">
-<h4 id="_ec2_key_pairs">EC2 key pairs</h4>
+<h4 id="_amazon_ec2_key_pairs">Amazon EC2 key pairs</h4>
 <div class="paragraph">
-<p>Make sure that at least one <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html" target="_blank" rel="noopener">Amazon EC2 key pair</a> exists in your AWS account in the Region where you plan to deploy the Quick Start. Make note of the key pair name. You need it during deployment. To create a key pair, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html" target="_blank" rel="noopener">Amazon EC2 key pairs and Linux instances</a>.</p>
+<p>Ensure that at least one Amazon EC2 key pair exists in your AWS account in the Region where you plan to deploy the Quick Start. Note the key-pair name because you will use it during deployment. To create a key pair, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html" target="_blank" rel="noopener">Amazon EC2 key pairs and Linux instances</a>.</p>
 </div>
 <div class="paragraph">
 <p>For testing or proof-of-concept purposes, we recommend creating a new key pair instead of using one that’s already being used by a production instance.</p>
@@ -1449,6 +1452,25 @@ Certain Regions are available on an opt-in basis. For more information, see <a h
 <h4 id="_iam_permissions">IAM permissions</h4>
 <div class="paragraph">
 <p>Before launching the Quick Start, you must sign in to the AWS Management Console with IAM permissions for the resources that the templates deploy. The <em>AdministratorAccess</em> managed policy within IAM provides sufficient permissions, although your organization may choose to use a custom policy with more restrictions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_job-functions.html" target="_blank" rel="noopener">AWS managed policies for job functions</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_deployment_options">Deployment options</h4>
+<div class="paragraph">
+<p>This Quick Start provides two deployment options:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Deploy Exchange into a new VPC</strong>. This option builds a new AWS environment consisting of the VPC, subnets, NAT gateways, security groups, bastion hosts, and other infrastructure components. It then deploys Exchange into this new VPC.</p>
+</li>
+<li>
+<p><strong>Deploy Exchange into an existing VPC</strong>. This option provisions Exchange in your existing AWS infrastructure.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The Quick Start provides separate templates for these options. It also lets you configure Classless Inter-Domain Routing (CIDR) blocks, instance types, and Exchange settings, as discussed later in this guide.</p>
 </div>
 </div>
 <div class="sect3">
@@ -1476,25 +1498,6 @@ Certain Regions are available on an opt-in basis. For more information, see <a h
 </div>
 <div class="paragraph">
 <p><strong>Note</strong>: Upload the Exchange 2019 installation media to an S3 bucket and temporarily make the installation media public. This will ensure that the file is quickly downloaded to the EC2 instances.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_deployment_options">Deployment options</h4>
-<div class="paragraph">
-<p>This Quick Start provides two deployment options:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Deploy Exchange into a new VPC</strong>. This option builds a new AWS environment consisting of the VPC, subnets, NAT gateways, security groups, bastion hosts, and other infrastructure components. It then deploys Exchange into this new VPC.</p>
-</li>
-<li>
-<p><strong>Deploy Exchange into an existing VPC</strong>. This option provisions Exchange in your existing AWS infrastructure.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>The Quick Start provides separate templates for these options. It also lets you configure Classless Inter-Domain Routing (CIDR) blocks, instance types, and Exchange settings, as discussed later in this guide.</p>
 </div>
 </div>
 </div>
@@ -1584,7 +1587,7 @@ You are responsible for the cost of the AWS services used while running this Qui
 <p>On the <strong>Specify stack details</strong> page, change the stack name if needed. Review the parameters for the template. Provide values for the parameters that require input. For all other parameters, review the default settings and customize them as necessary. For details on each parameter, see the <a href="#_parameter_reference">Parameter reference</a>Â section of this guide. When you finish reviewing and customizing the parameters, choose <strong>Next</strong>.</p>
 </li>
 <li>
-<p>On the <strong>Configure stack options</strong> page, you can <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html" target="_blank" rel="noopener">specify tags</a> (key-value pairs) for resources in your stack and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-add-tags.html" target="_blank" rel="noopener">set advanced options</a>. When you’re finished, choose <strong>Next</strong>.</p>
+<p>On the <strong>Configure stack options</strong> page, you can <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html" target="_blank" rel="noopener">specify tags</a> (key-value pairs) for resources in your stack and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-add-tags.html" target="_blank" rel="noopener">set advanced options</a>. When you finish, choose <strong>Next</strong>.</p>
 </li>
 <li>
 <p>On the <strong>Review</strong> page, review and confirm the template settings. Under <strong>Capabilities</strong>, select the two check boxes to acknowledge that the template creates IAM resources and might require the ability to automatically expand macros.</p>
@@ -2160,7 +2163,7 @@ Unless you are customizing the Quick Start templates for your own deployment pro
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Exchange Server 2019 source (ISO)
 (<code>Exchange2019Source</code>)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>https://</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://download.microsoft.com/download/7/3/f/73f75f9e-e7fd-4cb0-a2fc-405cbb800f2d/ExchangeServer2019-x64-CU10.ISO" class="bare">https://download.microsoft.com/download/7/3/f/73f75f9e-e7fd-4cb0-a2fc-405cbb800f2d/ExchangeServer2019-x64-CU10.ISO</a></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">(Optional) Full URL (including https://) for Exchange 2019 ISO.</p></td>
 </tr>
 <tr>
@@ -2678,7 +2681,7 @@ Unless you are customizing the Quick Start templates for your own deployment pro
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Path to Exchange 2016 ISO
 (<code>Exchange2016Source</code>)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://download.microsoft.com/download/0/b/7/0b702b8b-03ab-4553-9e2c-c73bb0c8535f/ExchangeServer2016-x64-CU20.ISO" class="bare">https://download.microsoft.com/download/0/b/7/0b702b8b-03ab-4553-9e2c-c73bb0c8535f/ExchangeServer2016-x64-CU20.ISO</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://download.microsoft.com/download/f/0/e/f0e65686-3761-4c9d-b8b2-9fb71a207b8d/ExchangeServer2016-x64-CU22.ISO" class="bare">https://download.microsoft.com/download/f/0/e/f0e65686-3761-4c9d-b8b2-9fb71a207b8d/ExchangeServer2016-x64-CU22.ISO</a></code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Full URL (including https://) for Exchange 2016 ISO.</p></td>
 </tr>
 <tr>
@@ -2869,7 +2872,7 @@ Unless you are customizing the Quick Start templates for your own deployment pro
 <h2 id="_quick_start_reference_deployments">Quick Start reference deployments</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>See the <a href="https://aws.amazon.com/quickstart/">AWS Quick Start home page</a>.</p>
+<p>See the <a href="https://aws.amazon.com/quickstart/" target="_blank" rel="noopener">AWS Quick Start home page</a>.</p>
 </div>
 </div>
 </div>
@@ -2905,12 +2908,12 @@ and to share your customizations with others.</p>
 </html>
 <!--
 repo commit:
-9ae2cdea6da8f881da8e1ebfd07c77ae925b2fbb
+2bb7494de8b0a0e3e8c7288f5ef95f40a1f35c25
 
 submodule config:
-+81ea0b675a571b662377f9de556a26cce8dad05f docs/boilerplate (heads/main)
+ eea042d0b9c005d2549a71349e5f28b02c81af75 docs/boilerplate (heads/main)
  ffc7af4e59a09dbf52199a3ecf70f3805abeff48 submodules/quickstart-aws-vpc (v1.0-58-gffc7af4)
- a7d12ad0d7f43bab5f91d0e2f1e07845675a2ff6 submodules/quickstart-microsoft-activedirectory (heads/main)
- 23af011799027a5ec193fad0233595461d232139 submodules/quickstart-microsoft-rdgateway (heads/main)
+ 8f4a6bb853f35a1dbe114de01012ba1b5edf7225 submodules/quickstart-microsoft-activedirectory (heads/main)
+ e5327babcb5447d4f428a1e02a3f22b117b09f5c submodules/quickstart-microsoft-rdgateway (heads/main)
  e1f1a322eff1014be7fbaa8f8384e9dea2fa218c submodules/quickstart-microsoft-utilities (heads/main)
 -->
