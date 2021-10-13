@@ -40,7 +40,7 @@
 |===
 |Parameter label (name) |Default value|Description|Allowed Remote Desktop Gateway external access CIDR
 (`RDGWCIDR`)|`**__Requires input__**`|The allowed CIDR Block for external access to the Remote Desktop Gateways.|Remote Desktop Gateway instance type
-(`RDGWInstanceType`)|`t2.large`|The Amazon EC2 instance type for the Remote Desktop Gateway instances.|Number of RDGW Hosts
+(`RDGWInstanceType`)|`t3.large`|The Amazon EC2 instance type for the Remote Desktop Gateway instances.|Number of RDGW Hosts
 (`NumberOfRDGWHosts`)|`1`|The number of Remote Desktop Gateway hosts to create.
 |===
 .Exchange Server Configuration
@@ -48,8 +48,7 @@
 |===
 |Parameter label (name) |Default value|Description|Enable AWS Backups
 (`EnableBackups`)|`yes`|Creates a default daily/weekly backup schedule using AWS Backup|Exchange Server version
-(`ExchangeServerVersion`)|`2016`|Version of Exchange Server to install. Options include either "2016" or "2019".|Exchange Server 2019 source (ISO)
-(`Exchange2019Source`)|`https://download.microsoft.com/download/7/3/f/73f75f9e-e7fd-4cb0-a2fc-405cbb800f2d/ExchangeServer2019-x64-CU10.ISO`|(Optional) Full URL (including https://) for Exchange 2019 ISO.|Deploy Edge servers
+(`ExchangeServerVersion`)|`2019`|Version of Exchange Server to install. Options include either "2016" or "2019".|Deploy Edge servers
 (`IncludeEdgeTransportRole`)|`no`|Choose yes to deploy Exchange Edge Transport servers in the public subnets.|Edge Role instance type
 (`EdgeInstanceType`)|`m5.large`|The Amazon EC2 instance type for the Exchange Edge Transport servers.|Edge Node 1 NetBIOS name
 (`EdgeNode1NetBIOSName`)|`EdgeNode1`|The NetBIOS name of the first Edge server (up to 15 characters).|Edge Node 1 private IP address

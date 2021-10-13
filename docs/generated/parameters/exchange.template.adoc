@@ -40,7 +40,7 @@
 [width="100%",cols="16%,11%,73%",options="header",]
 |===
 |Parameter label (name) |Default value|Description|Exchange Server version
-(`ExchangeServerVersion`)|`2016`|Version of Exchange Server to install. Options include either "2016" or "2019"|Deploy Edge servers
+(`ExchangeServerVersion`)|`2019`|Version of Exchange Server to install. Options include either "2016" or "2019"|Deploy Edge servers
 (`IncludeEdgeTransportRole`)|`no`|Choose yes to deploy Exchange Edge Transport servers in the public subnets.|Instance type for Edge server
 (`EdgeInstanceType`)|`t3.large`|The Amazon EC2 instance type for the Exchange Edge Transport servers.|Edge Node 1 NetBIOS Name
 (`EdgeNode1NetBIOSName`)|`EdgeNode1`|The NetBIOS name of the first Edge Server (up to 15 characters).|Edge Node 1 private IP address
@@ -53,8 +53,8 @@
 (`VolumeSize`)|`500`|The volume size for the Exchange data drive.|Data Volume type
 (`VolumeType`)|`gp2`|The volume type for the Exchange data drive.|Data Volume IOPS
 (`VolumeIops`)|`1000`|The Iops for the Exchange Data drive (Only used when volume type is io2).|Path to Exchange 2016 ISO
-(`Exchange2016Source`)|`https://download.microsoft.com/download/0/b/7/0b702b8b-03ab-4553-9e2c-c73bb0c8535f/ExchangeServer2016-x64-CU20.ISO`|Full URL (including https://) for Exchange 2016 ISO.|Path to Exchange 2019 ISO
-(`Exchange2019Source`)|`https://download.microsoft.com/download/7/3/f/73f75f9e-e7fd-4cb0-a2fc-405cbb800f2d/ExchangeServer2019-x64-CU10.ISO`|Full URL (including https://) for Exchange 2019 ISO.|Enable AWS Backups
+(`Exchange2016Source`)|`https://download.microsoft.com/download/f/0/e/f0e65686-3761-4c9d-b8b2-9fb71a207b8d/ExchangeServer2016-x64-CU22.ISO`|Full URL (including https://) for Exchange 2016 ISO.|Path to Exchange 2019 ISO
+(`Exchange2019Source`)|`https://download.microsoft.com/download/5/3/e/53e75dbd-ca33-496a-bd23-1d861feaa02a/ExchangeServer2019-x64-CU11.ISO`|Full URL (including https://) for Exchange 2019 ISO.|Enable AWS Backups
 (`EnableBackups`)|`yes`|Creates a default daily/weekly backup schedule using AWS Backup
 |===
 .Load Balancer Configuration
